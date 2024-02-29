@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { CountClient } from '@/components/CountClient'
 import { Metadata } from 'next';
+import Loading from './loading';
 
 export const metadata: Metadata = {
   title: "Count",
@@ -10,10 +11,12 @@ export const metadata: Metadata = {
 const CounterPage = () => {
   return (
     <div className='h-full  w-full grid place-items-center justify-center'>
-      <span className='text-7xl'>Counter</span>
-      <div className='self-start text-7xl grid justify-items-center gap-8'>
-        <CountClient />
-      </div>
+      <Suspense fallback={<Loading />}>
+        <span className='text-7xl'>Counter</span>
+        <div className='self-start text-7xl grid justify-items-center gap-8'>
+          <CountClient />
+        </div>
+      </Suspense>
     </div>
   )
 }
