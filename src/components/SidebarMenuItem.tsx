@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { CiDiscount1 } from "react-icons/ci";
 import { MdDashboard } from "react-icons/md";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
+
 
 
 interface Item {
@@ -32,6 +34,12 @@ const data: Item[] = [
     descripcion: 'Pokemon List',
     imagen: <MdOutlineCatchingPokemon size={35} />,
     path: '/dashboard/pokemons',
+  },
+  {
+    titulo: 'Favorites',
+    descripcion: 'Favorites List',
+    imagen: <MdFavoriteBorder size={35} />,
+    path: '/dashboard/favorites',
   }
 ]
 

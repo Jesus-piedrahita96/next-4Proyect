@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Generating Pokemons",
 };
 
-export default async function PokemonPage() {
+export default function PokemonPage() {
   return (
     <Suspense fallback={<Loading />}>
       <div className='grid gap-9 justify-items-center'>
