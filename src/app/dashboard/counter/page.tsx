@@ -14,7 +14,7 @@ const CounterPage = () => {
       <Suspense fallback={<Loading />}>
         <span className='text-7xl'>Counter</span>
         <div className='self-start text-7xl grid justify-items-center gap-8'>
-          <CountClient value={5} />
+          <CountClient value={0} />
         </div>
       </Suspense>
     </div>

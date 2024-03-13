@@ -1,6 +1,4 @@
-import { store } from '@/context';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { stat } from 'fs';
 
 interface CounterState {
   count: number;
