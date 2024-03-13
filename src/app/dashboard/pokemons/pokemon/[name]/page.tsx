@@ -44,7 +44,7 @@ export default async function PokemonDetailPage({params}: Props) {
       <div className="flex flex-wrap items-center">
         <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
-            <Image src={pokemon.sprites.other?.showdown.front_default} width={180} height={180} alt='imagen de pokemon' className=' align-middle rounded-t-lg' />
+            {/* <Image src={pokemon.sprites.other?.showdown.front_default} width={180} height={180} alt='imagen de pokemon' className=' align-middle rounded-t-lg' /> */}
             <blockquote className="relative p-8 mb-4">
               <h4 className="text-xl font-bold text-black">
                 {pokemon.name}

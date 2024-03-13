@@ -1,21 +1,30 @@
 'use client'
-import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from '@/context'
+import { addOne, initCounterState, substractOne } from '@/context/reducer/counterSlice'
+import { useEffect } from 'react'
 
-export const CountClient = () => {
-  const [count, setCount] = useState(0)
+interface Props { value: number }
+
+export const CountClient = ({value} : Props) => {
+  const count = useAppSelector(state => state.counterSlice.count)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(initCounterState(value))
+  }, [dispatch, value])
   return (
     <>
       {count}
       <div className='flex gap-16'>
         <button
           className='px-14 bg-blue-300 rounded text-5xl'
-          onClick={() => setCount(count + 1)}
+          onClick={() => dispatch(addOne())}
         >
           +
         </button>
         <button
           className='px-14 bg-blue-300 rounded text-5xl'
-          onClick={() => setCount(count - 1)}
+          onClick={() => dispatch(substractOne())}
         >
           -
         </button>
