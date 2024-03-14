@@ -8,9 +8,6 @@ import { GoHeartFill } from "react-icons/go";
 import { useAppDispatch, useAppSelector } from "@/context";
 import { TooglePokemon } from "@/context/reducer/pokemonsSlice";
 
-
-
-
 interface Props {
   pokemons: SimplePokemon[]
 }
@@ -23,6 +20,9 @@ export default function PokemonList({ pokemons }: Props) {
   const dispatch = useAppDispatch()
   const isFavorite = useAppSelector(state => state.pokemonsSlice)
 
+  const handleToogle = (pokemon: SimplePokemon) => {
+    dispatch(TooglePokemon(pokemon))
+  }
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function PokemonList({ pokemons }: Props) {
                 </Link>
               </div>
             <button
-                onClick={() => dispatch(TooglePokemon((pokemon)))}
+                onClick={() => handleToogle(pokemon)}
                 className="middle none center mr-3 h-12 w-full rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue  -500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 data-ripple-light="true"
               >

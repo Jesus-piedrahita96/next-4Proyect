@@ -1,14 +1,16 @@
-// import { PokemosResponse, SimplePokemon } from '@/pokemons';
+import { PokemonsFavorite } from "@/pokemons"
+
+export const metadata = {
+  title: 'Favoritos',
+  description: 'Pokemon Favoritos',
+}
 
 
-export default async function PokemonGrid() {
+export default function PokemonGrid() {
 
   return (
     <>
-      <span className='text-4xl font-bold'>Pokemon Favoritos</span>
-      <div className='flex flex-wrap gap-6'>
-        {/* <PokemonList pokemons={[]} /> */}
-      </div>
+      <PokemonsFavorite />
     </>
   )
 }

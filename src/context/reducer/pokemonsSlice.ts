@@ -16,8 +16,10 @@ const pokemonsSlice = createSlice({
     TooglePokemon(state, action: PayloadAction<SimplePokemon>) {
       const pokemon = action.payload
       const { id } = pokemon
+
       if (!!state[id]) {
         delete state[id]
+        return
       }
 
       state[id] = pokemon
